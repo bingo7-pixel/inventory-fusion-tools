@@ -1,4 +1,4 @@
-import { Package, AlertTriangle, DollarSign, BarChart2, ListChecked, Clock } from "lucide-react";
+import { Package, AlertTriangle, DollarSign, BarChart2, ListCheck, Clock } from "lucide-react";
 
 const StatsCards = () => {
   return (
@@ -45,7 +45,7 @@ const StatsCards = () => {
 
       <div className="bg-white rounded-lg shadow p-6 border">
         <div className="flex items-center">
-          <ListChecked className="w-8 h-8 text-indigo-500" />
+          <ListCheck className="w-8 h-8 text-indigo-500" />
           <div className="ml-4">
             <p className="text-sm text-gray-500">Categories</p>
             <p className="text-2xl font-bold">8</p>

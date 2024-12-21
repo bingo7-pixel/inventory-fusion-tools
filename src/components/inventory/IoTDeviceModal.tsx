@@ -40,7 +40,7 @@ const IoTDeviceModal = ({ open, onClose }: IoTDeviceModalProps) => {
                 <TableCell>{device.type}</TableCell>
                 <TableCell>{device.location}</TableCell>
                 <TableCell>
-                  <Badge variant={device.status === "Connected" ? "success" : "destructive"}>
+                  <Badge variant={device.status === "Connected" ? "secondary" : "destructive"}>
                     {device.status}
                   </Badge>
                 </TableCell>

@@ -40,7 +40,7 @@ const BatchTrackingModal = ({ open, onClose }: BatchTrackingModalProps) => {
                 <TableCell>{batch.received}</TableCell>
                 <TableCell>{batch.expiry}</TableCell>
                 <TableCell>
-                  <Badge variant={batch.status === "Expiring Soon" ? "warning" : "secondary"}>
+                  <Badge variant={batch.status === "Expiring Soon" ? "destructive" : "secondary"}>
                     {batch.status}
                   </Badge>
                 </TableCell>
