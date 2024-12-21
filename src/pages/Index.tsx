@@ -18,28 +18,43 @@ const Index = () => {
   const { toast } = useToast();
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
+    <div className="container mx-auto p-6 space-y-6 dark:bg-[#1A1F2C] min-h-screen">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold">Inventory Management</h1>
-          <p className="text-muted-foreground">Manage your restaurant's inventory efficiently</p>
+          <h1 className="text-3xl font-bold dark:text-white">Inventory Management</h1>
+          <p className="text-muted-foreground dark:text-gray-300">Manage your restaurant's inventory efficiently</p>
         </div>
-        <div className="flex gap-2">
-          <Button variant="outline" onClick={() => toast({ title: "Filters", description: "Filter functionality coming soon!" })}>
+        <div className="flex flex-wrap gap-2">
+          <Button 
+            variant="outline" 
+            onClick={() => toast({ title: "Filters", description: "Filter functionality coming soon!" })}
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <Filter className="w-4 h-4 mr-2" />
-            Filters
+            <span>Filters</span>
           </Button>
-          <Button variant="outline" onClick={() => toast({ title: "Import", description: "Import functionality coming soon!" })}>
+          <Button 
+            variant="outline" 
+            onClick={() => toast({ title: "Import", description: "Import functionality coming soon!" })}
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <Upload className="w-4 h-4 mr-2" />
-            Import
+            <span>Import</span>
           </Button>
-          <Button variant="outline" onClick={() => toast({ title: "Export", description: "Export functionality coming soon!" })}>
+          <Button 
+            variant="outline" 
+            onClick={() => toast({ title: "Export", description: "Export functionality coming soon!" })}
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <Download className="w-4 h-4 mr-2" />
-            Export
+            <span>Export</span>
           </Button>
-          <Button onClick={() => setShowBulkUpdate(true)}>
+          <Button 
+            onClick={() => setShowBulkUpdate(true)}
+            className="dark:bg-[#7E69AB] dark:text-white dark:hover:bg-[#6E59A5] transition-colors"
+          >
             <Plus className="w-4 h-4 mr-2" />
-            Add Item
+            <span>Add Item</span>
           </Button>
         </div>
       </div>
@@ -49,24 +64,39 @@ const Index = () => {
       <div className="flex flex-wrap gap-4 mb-6">
         <Input
           placeholder="Search inventory..."
-          className="max-w-xs"
+          className="max-w-xs dark:bg-[#403E43] dark:text-white dark:border-[#221F26]"
         />
-        <div className="flex gap-2 ml-auto">
-          <Button variant="outline" onClick={() => setShowBarcodeScanner(true)}>
+        <div className="flex flex-wrap gap-2 ml-auto">
+          <Button 
+            variant="outline" 
+            onClick={() => setShowBarcodeScanner(true)}
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <ScanLine className="w-4 h-4 mr-2" />
-            Scan Item
+            <span>Scan Item</span>
           </Button>
-          <Button variant="outline" onClick={() => setShowBatchTracking(true)}>
+          <Button 
+            variant="outline" 
+            onClick={() => setShowBatchTracking(true)}
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <History className="w-4 h-4 mr-2" />
-            Batch Tracking
+            <span>Batch Tracking</span>
           </Button>
-          <Button variant="outline" onClick={() => setShowIoTDevice(true)}>
+          <Button 
+            variant="outline" 
+            onClick={() => setShowIoTDevice(true)}
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <Wifi className="w-4 h-4 mr-2" />
-            IoT Devices
+            <span>IoT Devices</span>
           </Button>
-          <Button variant="outline">
+          <Button 
+            variant="outline"
+            className="dark:bg-[#403E43] dark:text-white dark:hover:bg-[#221F26] transition-colors"
+          >
             <BarChart3 className="w-4 h-4 mr-2" />
-            Analytics
+            <span>Analytics</span>
           </Button>
         </div>
       </div>
