@@ -7,12 +7,14 @@ import InventoryTable from "@/components/inventory/InventoryTable";
 import BulkUpdateModal from "@/components/inventory/BulkUpdateModal";
 import BatchTrackingModal from "@/components/inventory/BatchTrackingModal";
 import IoTDeviceModal from "@/components/inventory/IoTDeviceModal";
-import { Filter, Plus, BarChart3, History, Download, Upload, Wifi } from "lucide-react";
+import BarcodeModal from "@/components/inventory/BarcodeModal";
+import { Filter, Plus, BarChart3, History, Download, Upload, Wifi, ScanLine } from "lucide-react";
 
 const Index = () => {
   const [showBulkUpdate, setShowBulkUpdate] = useState(false);
   const [showBatchTracking, setShowBatchTracking] = useState(false);
   const [showIoTDevice, setShowIoTDevice] = useState(false);
+  const [showBarcodeScanner, setShowBarcodeScanner] = useState(false);
   const { toast } = useToast();
 
   return (
@@ -50,6 +52,10 @@ const Index = () => {
           className="max-w-xs"
         />
         <div className="flex gap-2 ml-auto">
+          <Button variant="outline" onClick={() => setShowBarcodeScanner(true)}>
+            <ScanLine className="w-4 h-4 mr-2" />
+            Scan Item
+          </Button>
           <Button variant="outline" onClick={() => setShowBatchTracking(true)}>
             <History className="w-4 h-4 mr-2" />
             Batch Tracking
@@ -69,6 +75,7 @@ const Index = () => {
       <BulkUpdateModal open={showBulkUpdate} onClose={() => setShowBulkUpdate(false)} />
       <BatchTrackingModal open={showBatchTracking} onClose={() => setShowBatchTracking(false)} />
       <IoTDeviceModal open={showIoTDevice} onClose={() => setShowIoTDevice(false)} />
+      <BarcodeModal open={showBarcodeScanner} onClose={() => setShowBarcodeScanner(false)} />
     </div>
   );
 };
